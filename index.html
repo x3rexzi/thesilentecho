@@ -383,7 +383,7 @@
             let cardsHtml = '';
             SITE_CONTENT.library.items.forEach(card => {
                 cardsHtml += `
-                    <article class="film-card group relative h-[400px] w-full rounded-lg overflow-hidden cursor-pointer bg-white dark:bg-[#2a161a] border border-slate-200 dark:border-white/5 shadow-xl dark:shadow-black/40" onclick="showToast('Loading collection: ${card.title}')">
+                    <article class="film-card group relative h-[400px] w-full rounded-lg overflow-hidden cursor-pointer bg-white dark:bg-[#2a161a] border border-slate-200 dark:border-white/5 shadow-xl dark:shadow-black/40" >
                         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-40" style="background-image: url('${card.img}')"></div>
                         <div class="absolute inset-0 bg-gradient-to-t from-background-dark-alt via-background-dark-alt/80 to-transparent opacity-90"></div>
                         <div class="relative h-full flex flex-col justify-end p-6 z-10">
@@ -593,6 +593,7 @@
     </script>
 </body>
 </html>
+
 
 
 
