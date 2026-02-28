@@ -14,10 +14,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lateef:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Freehand Font for Journal Section -->
+    <!-- Grenze Gotisch Font for Journal Section -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bilbo&family=Freehand&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Grenze+Gotisch:wght@100..900&display=swap" rel="stylesheet">
+    
     <!-- ==========================================
          1. THEME COLORS
          ========================================== -->
@@ -56,10 +57,8 @@
                 "newsreader": ["Newsreader", "serif"],
                 "noto": ["Noto Serif", "serif"],
                 "lateef": ["Lateef", "serif"],
-                "freehand": ["Freehand", "cursive"],
-                "bilbo": ["Bilbo", "cursive"],
-                "merienda": ["Merienda", "cursive"],
-},
+                "grenze": ["Grenze Gotisch", "serif"],
+              },
               animation: {
                 'float-slow': 'float 8s ease-in-out infinite',
                 'fade-in': 'fadeIn 1s ease-out forwards',
@@ -445,7 +444,6 @@
             SITE_CONTENT.journal.entries.forEach(entry => {
                 const isReverse = entry.reverse ? 'md:flex-row-reverse' : 'md:flex-row';
                 const textAlignment = entry.reverse ? 'md:text-right' : '';
-                const btnAlignment = entry.reverse ? 'md:justify-end' : '';
 
                 entriesHtml += `
                     <div class="group relative py-12 border-b border-dashed border-slate-800/50">
@@ -455,8 +453,8 @@
                                 <div class="absolute top-2 right-2 px-2 py-0.5 bg-black/70 text-[10px] font-mono text-white tracking-widest border border-white/20">SEQ. ${entry.seq}</div>
                             </div>
                             <div class="flex-1 flex flex-col gap-4 pt-2 ${textAlignment}">
-                                <h3 class="text-3xl font-bold text-slate-100">${entry.title}</h3>
-                                <p class="text-slate-400 font-light leading-relaxed">${entry.body}</p>
+                                <h3 class="text-4xl md:text-5xl font-bold text-slate-100">${entry.title}</h3>
+                                <p class="text-slate-300 font-light leading-relaxed text-xl md:text-2xl">${entry.body}</p>
                             </div>
                         </div>
                     </div>
@@ -464,14 +462,14 @@
             });
 
             return `
-                <div class="bg-background-light dark:bg-background-dark-journal font-freehand text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden min-h-screen">
+                <div class="bg-background-light dark:bg-background-dark-journal font-grenze text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden min-h-screen">
                     <div class="relative flex h-screen w-full flex-col overflow-hidden">
                         <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/20 bg-background-dark-journal/95 backdrop-blur-sm px-6 lg:px-10 py-4 fixed top-0 w-full z-40">
                             <a href="#home" class="flex items-center gap-4 text-white">
                                 <div class="size-6 text-primary">
                                     <span class="material-symbols-outlined !text-2xl">movie_filter</span>
                                 </div>
-                                <h2 class="text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em]">Storyteller</h2>
+                                <h2 class="text-slate-100 text-lg font-bold leading-tight tracking-[-0.015em] font-display">Storyteller</h2>
                             </a>
                         </header>
                         <div class="flex h-full pt-[72px]">
@@ -479,10 +477,10 @@
                                 <div class="absolute -top-40 -left-40 w-96 h-96 bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
                                 <div class="relative z-10 flex flex-col gap-6">
                                     <div class="w-12 h-1 bg-primary rounded"></div>
-                                    <h1 class="text-5xl xl:text-7xl font-black leading-[0.9] tracking-[-0.04em] uppercase text-slate-100">
+                                    <h1 class="text-5xl xl:text-7xl leading-[0.9] tracking-[-0.04em] text-slate-100 font-display">
                                         The<br/>Cutting<br/><span class="text-primary">Room</span>
                                     </h1>
-                                    <p class="text-slate-400 text-lg xl:text-xl font-light leading-relaxed max-w-md">
+                                    <p class="text-slate-400 text-2xl md:text-3xl font-light leading-relaxed max-w-md">
                                         ${SITE_CONTENT.journal.subtitle}
                                     </p>
                                 </div>
@@ -594,14 +592,4 @@
 
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
